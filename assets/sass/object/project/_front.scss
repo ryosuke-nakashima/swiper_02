@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/*----------------------------------------
+  @use
+----------------------------------------*/
+@use "foundation/" as *;
+
+
+
+.l-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
+  overflow: hidden;
+}
+@media screen and (max-width: 750px) {
+  .l-container {
+    max-width: none;
+    padding: 0 6.7%;
+}
+}
+/*----------------------------------------
+	p-front
+----------------------------------------*/
+
+.swiper {
+  position: relative;
+  overflow: visible;
+}
+.swiper-slide img {
+  height: auto;
+  width: 100%;
+}
+/* 左ボタン */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;   /* ボタンサイズ */
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.swiper-button-prev {
+  background-image: url('../img/front/img-prev.png');
+  left: 12%;
+}
+
+/* 右ボタン */
+.swiper-button-next {
+  background-image: url('../img/front/img-next.png');
+  right: 12%;
+}
+
+/* デフォルトの矢印を非表示にする */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
+}
+@media screen and (max-width: 750px) {
+
+.swiper-button-prev,
+  .swiper-button-next {
+    width: calc( (60/ 750) * 100% );
+    height: calc( (60/ 750) * 100% );
+    font-size: 1.5vw;
+  }
+	.swiper-button-prev {
+  left: -4vw;
+}
+.swiper-button-next {
+  right: -4vw;
+	}
+}
